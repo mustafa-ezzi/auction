@@ -1,0 +1,74 @@
+// Write your overrides
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: large;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Prevent default scrolling */
+}
+// a {
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 400;
+//     font-size: large;
+//     color: #000000;
+//     margin: 0;
+//     padding: 0;
+//     overflow: hidden;
+// }
+
+.v-text-field{
+font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: large;
+    color: #000000;
+}
+
+h1,
+h2,
+h3,
+.heading {
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+th,
+td {
+    color: black
+}
+
+footer {
+    font-size: small;
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+    overflow: hidden;
+    opacity: 0;
+    /* Hidden */
+    transition: opacity 0.3s;
+    /* Smooth transition */
+}
+
+/* Scrollbar thumb styling */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Show scrollbar on hover */
+:hover::-webkit-scrollbar {
+    opacity: 1;
+    /* Visible */
+}

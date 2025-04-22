@@ -1,0 +1,66 @@
+from django.urls import path
+from .views import (
+    DeleteAPIView,
+    GenerateCSV,
+    TeamBid,
+    TeamLogin,
+    ResetUnsoldPlayers,
+    BulkPlayer,
+    PlayerReverse,
+    PlayerSold,
+    TeamPlayer,
+    ProjectApiView,
+    UnsoldPlayers,
+    GetAllTeamsByProject,
+    GetAllPlayersByProject,
+    CategoryDropdownApiView,
+    ProjectPostApiVeiw,
+    TeamsPostApiView,
+    TeamsApiView,
+    CategoriesPostApiView,
+    PlayersPostApiView,
+    CategoriesApiView,
+    PlayersApiView,
+    RandomPlayers,
+    UpdateSoldPrice,
+)
+
+
+urlpatterns = [
+    path("project/", ProjectPostApiVeiw.as_view(), name="get-all"),
+    path("create/project/", ProjectPostApiVeiw.as_view(), name="create"),
+    path("project/<int:pk>/", ProjectApiView.as_view(), name="by-id"),
+    path("categories/", CategoriesPostApiView.as_view(), name="get-all"),
+    path("create/categories/", CategoriesPostApiView.as_view(), name="create"),
+    path("categories/<int:pk>/", CategoriesApiView.as_view(), name="by-id"),
+    path("create/players/", PlayersPostApiView.as_view(), name="create"),
+    path("players/<int:pk>/", PlayersApiView.as_view(), name="by-id"),
+    path("create/teams/", TeamsPostApiView.as_view(), name="create"),
+    path("teams/<int:pk>/", TeamsApiView.as_view(), name="by-id"),
+    path(
+        "all/category/<int:project_id>/",
+        CategoryDropdownApiView.as_view(),
+        name="get-all",
+    ),
+    path(
+        "all/players/<int:project_id>/", GetAllPlayersByProject.as_view(), name="get-players"
+    ),
+    path("all/teams/<int:project_id>/", GetAllTeamsByProject.as_view(), name="get-teams"),
+    path("players/team/<int:team_id>/", TeamPlayer.as_view(), name="get-all"),
+    path("auction/random-player/", RandomPlayers.as_view()),
+    path("auction/sold-player/", PlayerSold.as_view()),
+    path("auction/reverse-player/<int:pk>/", PlayerReverse.as_view()),
+    path("bulk/", BulkPlayer.as_view()),
+    path("team/login/", TeamLogin.as_view()),
+    path("players/reset/<int:pk>/", ResetUnsoldPlayers.as_view()),
+    path("generate-csv/<int:project_id>/", GenerateCSV.as_view()),
+    path(
+        "players/unsold/<int:pk>/<int:category_id>/",
+        UnsoldPlayers.as_view(),
+        name="get-all",
+    ),
+    path("auction/teams-bid/", TeamBid.as_view()),
+    path("delete/image/", DeleteAPIView.as_view()),
+    path("auction/update/sold_price/<int:pk>/", UpdateSoldPrice.as_view()),
+
+]

@@ -1,0 +1,143 @@
+/* Reset and Font */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Prevent default scrolling */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 0.8);
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.461);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #333333c1, rgba(113, 113, 113, 0.514));
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3333334f, #333);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Scrollable Containers */
+.layout-wrapper,
+.layout-nav-type-vertical,
+.table-wrapper,
+.sidebar-wrapper {
+  overflow: hidden;
+  /* Hide scrollbars initially */
+  max-height: 100%;
+  /* Ensure containers respect height limits */
+}
+
+body:hover ::-webkit-scrollbar,
+.layout-wrapper:hover ::-webkit-scrollbar,
+.table-wrapper:hover ::-webkit-scrollbar,
+.sidebar-wrapper:hover ::-webkit-scrollbar {
+  opacity: 1;
+  /* Show scrollbar on hover */
+}
+
+.table-wrapper:hover,
+.sidebar-wrapper:hover {
+  overflow: auto;
+  /* Allow scrolling when hovered */
+}
+
+/* Loading Animation Styles */
+#loading-bg {
+  position: absolute;
+  background: var(--initial-loader-bg, #fff);
+  inset: 0;
+  /* Cover the entire screen */
+  z-index: 9999;
+}
+
+.loading-logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading {
+  position: absolute;
+  border: 3px solid transparent;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading .effect-1,
+.loading .effect-2,
+.loading .effect-3 {
+  position: absolute;
+  border: 3px solid transparent;
+  width: 100%;
+  height: 100%;
+  border-left: 3px solid var(--initial-loader-color, #eee);
+  border-radius: 50%;
+}
+
+.loading .effect-1 {
+  animation: rotate 1s ease infinite;
+}
+
+.loading .effect-2 {
+  animation: rotate-opacity 1s ease infinite 0.1s;
+}
+
+.loading .effect-3 {
+  animation: rotate-opacity 1s ease infinite 0.2s;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotate-opacity {
+  0% {
+    opacity: 0.1;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(1turn);
+  }
+}
+
+/* Hover Effects */
+::-webkit-scrollbar-track:hover {
+  background: rgba(90, 87, 99, 0.292);
+}
